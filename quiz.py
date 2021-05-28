@@ -7,7 +7,7 @@ Created on Fri May 29 16:26:12 2020
 """
 import csv
 import random
-import sys
+from flask import url_for
 
 no_of_tries = 5
 attempts = 0
@@ -15,7 +15,7 @@ score = 0
 
 name = input("Please enter your name: ")
 
-infile = sys.argv[1]
+infile = "static/test_data.csv"
 data = open(infile)
 question_prompts = list(csv.reader(data))
 random.shuffle(question_prompts)

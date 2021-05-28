@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bible Quiz Play</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='game.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/game.css') }}">
 </head>
 <body>
     <div class="container">
         <div id="game" class="justify-center flex-column">
-            <h2 id="question">{{ question }} </h2>
+            <h2 id="question">{{ question[0] }} </h2>
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
-                <p class="choice-text">Choice 1</p>
+                <p class="choice-text">{{ question[2] }} </p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">B</p>
-                <p class="choice-text">Choice 2</p>
+                <p class="choice-text">{{ question[3] }} </p>
             </div>
             <div class="choice-container">
                 <p class="choice-prefix">C</p>
-                <p class="choice-text">Choice 3</p>
+                <p class="choice-text">{{ question[4] }} </p>
             </div>
-            <div class="choice-container">
-                <p class="choice-prefix">D</p>
-                <p class="choice-text">Choice 4</p>
-            </div>
+            <div><a class ="btn" href="">Submit</a></div>
      </div>
 
     </div>

@@ -1,5 +1,8 @@
-from flask import Flask, render_template
-import
+
+from flask import Flask, render_template, request
+import quiz
+
+
 app = Flask(__name__)
 
 
@@ -9,8 +12,14 @@ def home():
 
 
 @app.route("/play", methods=["GET", "POST"])
+@app.route('/game_backup', methods=["GET","POST"])
 def play():
-    return render_template("game_backup.html", question=question)
+    if request.method == "POST":
+        return render_template("game_backup.html", question=quiz.questions)
+        # Process submitted answer
+    else:
+        #s
+# return redirect("play.html", question=quiz.questions)
 
 
 app.run(debug=True)
